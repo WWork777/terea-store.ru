@@ -41,6 +41,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={roboto.className}>
+      <meta name="yandex-verification" content="e09aceba1c6becd7" />
       <body>
         <NotificationProvider>
           <CartProvider>

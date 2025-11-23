@@ -30,7 +30,7 @@ export default function YandexMetrika() {
     // Инициализируем счетчик после загрузки скрипта
     script.onload = () => {
       if (window.ym) {
-        window.ym(105195559, "init", {
+        window.ym(105468382, "init", {
           clickmap: true,
           trackLinks: true,
           accurateTrackBounce: true,
@@ -52,7 +52,7 @@ export default function YandexMetrika() {
     <noscript>
       <div>
         <img
-          src="https://mc.yandex.ru/watch/105195559"
+          src="https://mc.yandex.ru/watch/105468382"
           style={{ position: "absolute", left: "-9999px" }}
           alt="Yandex Metrika"
         />
