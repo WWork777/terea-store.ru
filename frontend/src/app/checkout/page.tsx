@@ -930,13 +930,13 @@ ${orderData.ordered_items
                 <h3>Способ получения</h3>
 
                 {/* Сообщение о недоступности самовывоза */}
-                <div className={styles.pickupDisabled}>
+                {/* <div className={styles.pickupDisabled}>
                   <div className={styles.pickupDisabledIcon}>⚠️</div>
                   <div className={styles.pickupDisabledText}>
                     <strong>Самовывоз временно недоступен</strong>
                     <p>В данный момент доступна только доставка</p>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Сообщение о минимальном количестве для доставки */}
                 {!canDeliver && (
@@ -953,14 +953,14 @@ ${orderData.ordered_items
                 <div className={styles.deliveryMethods}>
                   {/* Самовывоз - заблокирован */}
                   <label
-                    className={`${styles.deliveryMethod} ${styles.disabled}`}
+                    className={`${styles.deliveryMethod}`}
                   >
                     <input
                       type="radio"
                       name="deliveryMethod"
                       value="pickup"
-                      checked={false}
-                      disabled
+                      checked={deliveryMethod == "pickup"}
+                      // disabled
                       onChange={(e) =>
                         setDeliveryMethod(e.target.value as DeliveryMethod)
                       }
@@ -1062,15 +1062,13 @@ ${orderData.ordered_items
               <button
                 type="submit"
                 className={styles.submitButton}
-                disabled={isSubmitting || !canDeliver || !agreementChecked}
+                disabled={isSubmitting || !agreementChecked}
               >
                 {isSubmitting ? (
                   <>
                     <div className={styles.spinner}></div>
                     Оформляем заказ...
                   </>
-                ) : !canDeliver ? (
-                  "Недостаточно товаров для заказа"
                 ) : !agreementChecked ? (
                   "Примите соглашение"
                 ) : (

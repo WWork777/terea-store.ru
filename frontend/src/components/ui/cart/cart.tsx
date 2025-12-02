@@ -92,10 +92,10 @@ const Cart: FC<CartProps> = ({ isOpen, onClose }) => {
   };
 
   const handleOrder = () => {
-    if (!canOrderDelivery()) {
-      alert("Для заказа доставки необходимо минимум 10 пачек или 1 блок");
-      return;
-    }
+    // if (!canOrderDelivery()) {
+    //   alert("Для заказа доставки необходимо минимум 10 пачек или 1 блок");
+    //   return;
+    // }
 
     setIsOrdering(true);
     setTimeout(() => {
@@ -236,16 +236,12 @@ const Cart: FC<CartProps> = ({ isOpen, onClose }) => {
                     Очистить корзину
                   </button>
                   <button
-                    className={`${styles.cart__order} ${
-                      !canDeliver ? styles.cart__orderDisabled : ""
-                    }`}
+                    className={`${styles.cart__order}`}
                     onClick={handleOrder}
-                    disabled={isOrdering || !canDeliver}
+                    disabled={isOrdering}
                   >
                     {isOrdering
                       ? "Оформляем..."
-                      : !canDeliver
-                      ? "Недостаточно товаров"
                       : "Оформить заказ"}
                   </button>
                 </div>
