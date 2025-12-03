@@ -61,7 +61,7 @@ export default function Footer() {
                 />
               </Link>
               <Link
-                href="https://t.me/ilumastore_chat22"
+                href="https://t.me/Ilumastore2025"
                 className={styles.social_link}
               >
                 <Image
